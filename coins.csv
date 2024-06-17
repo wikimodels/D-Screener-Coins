@@ -1,0 +1,3 @@
+symbol,turnover24h,exchange,category,logo,devAct,devActUrl,minQty,minNotional,tickSize
+1000SATSUSDT,38491741.3149929,bi,IV,1000sats.png,undefined,undefined,1,0,0.000001
+BEAMXUSDT,11898162.33864,bi,IV,beamx.svg,low,undefined,1,0,0.000001
