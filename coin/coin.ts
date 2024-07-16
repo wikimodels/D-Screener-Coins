@@ -9,7 +9,10 @@ export interface Coin {
   minQty: number;
   minNotional: number;
   tickSize: number;
-  tvLink: string;
-  cgLink: string;
-  exchLink: string;
+  liqThSum1h?: number;
+  liqThSum15m?: number;
+  liqTh24h1h?: number;
+  liqTh24h15m?: number;
+  exchLink?: string;
+  tvLink?: string;
 }
