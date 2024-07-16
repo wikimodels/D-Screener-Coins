@@ -1,7 +1,6 @@
 import { load } from "https://deno.land/std@0.223.0/dotenv/mod.ts";
-
-import { Coin } from "../models/coin.ts";
 import { headers } from "./headers.ts";
+import { Coin } from "../../models/coin.ts";
 const env = await load();
 
 export async function insertCoinsToDb(coins: Coin[]) {

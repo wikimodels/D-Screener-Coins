@@ -1,4 +1,4 @@
-import { Coin } from "../models/coin.ts";
+import { Coin } from "../../models/coin.ts";
 
 export function addLinks(coin: Coin) {
   coin.tvLink =

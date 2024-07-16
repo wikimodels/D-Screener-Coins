@@ -1,5 +1,5 @@
 import { load } from "https://deno.land/std@0.223.0/dotenv/mod.ts";
-import { headers } from "../functions/headers.ts";
+import { headers } from "./headers.ts";
 
 const env = await load();
 
