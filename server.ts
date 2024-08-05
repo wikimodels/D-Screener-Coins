@@ -6,6 +6,7 @@ import { loadCoinsFromDisk } from "./functions/coins/read-coins-from-disk.ts";
 import { insertCoinsToDb } from "./functions/coins/insert-coins-to-db.ts";
 import { addLinks } from "./functions/coins/add-links.ts";
 import { Coin } from "./models/coin.ts";
+import { cronTaskUpdateCoinsCategories } from "./functions/cron-task/update-coins-categories.ts";
 
 const app = express();
 
@@ -34,4 +35,5 @@ app.get("/get-and-save-all-coins", async (req: any, res: any) => {
 
 app.listen(8000, () => {
   console.log("%cServer ---> running...", "color:green");
+  cronTaskUpdateCoinsCategories();
 });

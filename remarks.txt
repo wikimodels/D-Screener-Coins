@@ -1,0 +1,3 @@
+deployctl deploy --project d-screener-coins --entrypoint server.ts
+
+deployctl projects delete d-screener-coins

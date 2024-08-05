@@ -1,3 +1,4 @@
+import { load } from "https://deno.land/std@0.223.0/dotenv/mod.ts";
 import { byClient } from "../../../clients/by-order-clients.ts";
 
 import { KlineRepo } from "../../../models/candles/kline-repo.ts";
@@ -8,6 +9,9 @@ import { sendTgGeneralErrorMessage } from "../../tg/send-tg-general-error-msg.ts
 import { mapByKlineDataToObj } from "./map-by-kline-data-to-obj.ts";
 import { setByKlineTimeframe } from "./../../../utils/tf/set-by-kline-timeframe.ts";
 import { Coin } from "../../../models/coin.ts";
+
+const env = await load();
+
 export async function getByKlineData(
   coins: Coin[],
   timeframe: TF,
@@ -32,7 +36,8 @@ export async function getByKlineData(
 
     if (badResults.length > 0) {
       await sendTgGeneralErrorMessage(
-        "getByKlineData(): BAD RESULTS " + JSON.stringify(badResults)
+        "D-Screener-Coins:getByKlineData(): BAD RESULTS " +
+          JSON.stringify(badResults)
       );
     }
 
@@ -54,6 +59,8 @@ export async function getByKlineData(
     return data;
   } catch (e) {
     console.log(e);
-    await sendTgGeneralErrorMessage("getByKlineData(): " + e.message);
+    await sendTgGeneralErrorMessage(
+      `${env["PROJECT_NAME"]}:getByKlineData() Error: ${e.message}`
+    );
   }
 }

@@ -11,8 +11,8 @@ export interface Coin {
   tickSize: number;
   liqThSum1h?: number;
   liqThSum15m?: number;
-  liqTh24h1h?: number;
-  liqTh24h15m?: number;
+  liqTh1h24h?: number;
+  liqTh15m24h?: number;
   exchLink?: string;
   tvLink?: string;
   cgLink?: string;
